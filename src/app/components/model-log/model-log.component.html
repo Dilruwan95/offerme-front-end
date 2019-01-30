@@ -1,0 +1,40 @@
+<button type="button" mdbBtn color="primary" rounded="true" data-toggle="modal" data-target="#basicExample" (click)="frame.show()"
+  mdbWavesEffect>SignIn</button>
+
+<div mdbModal #frame="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+        <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <i class="fa fa-envelope prefix grey-text"></i>
+          <input type="email" id="defaultForm-email" formControlName="usernameOrEmail" class="form-control validate" mdbInputDirective>
+          <label data-error="wrong" data-success="right" for="defaultForm-email">Your username or email</label>
+        </div>
+
+        <div class="md-form mb-4">
+          <i class="fa fa-lock prefix grey-text"></i>
+          <input type="password" id="defaultForm-pass" formControlName="password" class="form-control validate" mdbInputDirective>
+          <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button mdbBtn color="primary" class="waves-light" mdbWavesEffect
+        (click)="frame.hide()">Login<i class="fa fa-sign-in ml-1"></i></button>
+      </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>

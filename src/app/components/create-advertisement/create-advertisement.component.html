@@ -1,0 +1,35 @@
+<!-- Default form contact -->
+<form [formGroup]=class="text-center border border-light p-5">
+
+  <p class="h4 mb-4">Advertisement</p>
+
+  <!-- Subject -->
+  <select class="browser-default custom-select mb-4">
+    <option value="1" disabled >Choose your category</option>
+    <option value="2" >Clothing</option>
+    <option value="3">Food</option>
+    <option value="4">Finance</option>
+    <option value="5">Service provider</option>
+    <option value="6" >Other</option>
+  </select>
+
+  <!-- Name -->
+  <input type="number" formControlName="NewPrice" id="" class="form-control mb-4" placeholder="New Price">
+
+
+  <input type="number" formControlName="OldPrice"id="" class="form-control mb-4" placeholder="Old Price">
+
+
+  <input type="number" formControlName="Discount" id="" class="form-control mb-4" placeholder="Discount">
+  
+  Start Date: <input type="date" formControlName="StartDate" id="" class="form-control mb-4" placeholder="Start Date">
+
+
+  End Date:<input type="date" formControlName="EndDate" id="" class="form-control mb-4" placeholder="End Date">
+
+  <input type="file" id="" class="form-control mb-4" placeholder="" (change)="upload($event)" accept=".png,.jpg"   >
+
+  
+  <button class="btn btn-info btn-block" type="submit" >Submit</button>
+
+</form>

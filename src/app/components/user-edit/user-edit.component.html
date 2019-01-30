@@ -1,0 +1,32 @@
+<br><br>
+<div class="container">
+<form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+    <div class="md-form form-group mt-5">
+        <input mdbInputDirective type="text" class="form-control" id="formGroupExampleInputMD" [(ngModel)]="currentUser.id" formControlName="id" disabled>
+        <label for="formGroupExampleInputMD">Your id:</label>
+      </div>
+  <div class="md-form form-group mt-5">
+    <input mdbInputDirective type="text" class="form-control" id="formGroupExampleInputMD" [(ngModel)]="currentUser.name" formControlName="name" >
+    <label for="formGroupExampleInputMD">Your name:</label>
+  </div>
+  <div class="md-form form-group mt-5">
+    <input mdbInputDirective type="text" class="form-control" id="formGroupExampleInput2MD" [(ngModel)]="currentUser.username" formControlName="username">
+    <label for="formGroupExampleInput2MD">Your username:</label>
+  </div>
+  <div class="md-form form-group mt-5">
+    <input mdbInputDirective type="text" class="form-control" id="formGroupExampleInput2MD" [(ngModel)]="currentUser.email" formControlName="email">
+    <label for="formGroupExampleInput2MD">Your email:</label>
+  </div>
+  <div class="md-form form-group mt-5">
+    <input mdbInputDirective type="text" class="form-control" id="formGroupExampleInput2MD" [(ngModel)]="currentUser.address" formControlName="address">
+    <label for="formGroupExampleInput2MD">Your address:</label>
+  </div>
+  <div class="md-form form-group mt-5">
+    <input mdbInputDirective type="text" class="form-control" id="formGroupExampleInput2MD" [(ngModel)]="currentUser.telephone" formControlName="telephone">
+    <label for="formGroupExampleInput2MD">Your contect:</label>
+  </div>
+  <div class="modal-footer d-flex justify-content-center">
+    <button mdbBtn color="info" class="waves-light" mdbWavesEffect>Update your</button>
+  </div>
+</form>
+</div>

@@ -1,0 +1,261 @@
+<!--Carousel Wrapper-->
+
+
+<div class="background" *ngIf="!authService.isLoggedIn()">
+  <br>
+  <br>
+<br><br>
+  <div class="container">
+   <div class="row">
+      <div class="col">
+      </div>
+      <div class="col-6">
+        <p>Model, ModelMap, and ModelAndView are used to define a model in a Spring MVC application.
+           Model defines a holder for model attributes and is primarily designed for adding attributes to the model. 
+           ModelMap is an extension of Model with the ability to store attributes in a map and chain method calls. 
+           ModelAndView is a holder for a model and a view; it allows to return both model and view in one return value.
+          </p>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+    <div class="row">
+        <div class="col">
+          </div>
+        <div class="col">
+        </div>
+        <div class="col">
+          </div>
+        <div class="col" *ngIf="!authService.isLoggedIn()">
+         <app-model-log></app-model-log>
+        </div>
+        <div class="col" *ngIf="!authService.isLoggedIn()">
+         <!-- <app-model-reg></app-model-reg> -->
+        <a routerLink="/signp">
+      <button type="button" mdbBtn color="primary" mdbWavesEffect>SignUp</button></a>
+          </div>
+          <div class="col">
+            </div>
+            <div class="col">
+              </div>
+          <div class="col">
+          </div>
+      </div>  
+  </div>
+</div>
+<div class="loginBackGround" *ngIf="authService.isLoggedIn()">
+  <br><br><br>
+  <div class="row">
+      <div class="col-8">
+         <!--Carousel Wrapper-->
+<mdb-carousel [isControls]="true" [animation]="'slide'">
+    <!--First slide-->
+    <mdb-carousel-item>
+        <img class="d-block w-100" src="http://mobitel.lk/sites/default/files/images/SelfcareApp_Page_Website.jpg" alt="First slide">
+    </mdb-carousel-item>
+    <!--/First slide-->
+    <!--Second slide-->
+    <mdb-carousel-item>
+        <img class="d-block w-100" src="http://mobitel.lk/sites/default/files/images/SelfcareApp_Page_Website.jpg" alt="Second slide">
+    </mdb-carousel-item>
+    <!--/Second slide-->
+    <!--Third slide-->
+    <mdb-carousel-item>
+        <img class="d-block w-100" src="http://mobitel.lk/sites/default/files/images/SelfcareApp_Page_Website.jpg" alt="Third slide">
+    </mdb-carousel-item>
+    <!--/Third slide-->
+    <mdb-carousel-item>
+      <img class="d-block w-100" src="http://mobitel.lk/sites/default/files/images/SelfcareApp_Page_Website.jpg" alt="Third slide">
+  </mdb-carousel-item>
+  <mdb-carousel-item>
+    <img class="d-block w-100" src="http://mobitel.lk/sites/default/files/images/SelfcareApp_Page_Website.jpg" alt="Third slide">
+</mdb-carousel-item>
+</mdb-carousel>
+<!--/.Carousel Wrapper--> 
+        </div>
+        <div class="col-4">
+            <!-- Card -->
+<div class="card card-image mb-3" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
+<a routerLink='/help'>
+    <!-- Content -->
+    <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+      <div class="text_text">
+        <h5 class="pink-text"><strong><i class="fa fa-pie-chart"></i>OfferMe</strong></h5>
+        <h3 class="card-title pt-2"><strong>This is card title</strong></h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
+          optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
+          Odit sed qui, dolorum!.</p>
+        <a mdbBtn color="pink" class="waves-light" mdbWavesEffect><i class="fa fa-clone left"></i>More Details</a>
+      </div>
+    </div>
+    </a>
+    <!-- Content -->
+  </div>
+  <!-- Card -->
+        </div>
+  </div>
+</div>
+
+<br>
+<div class="container">
+        <!--Navbar-->
+        <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark info-color-dark lighten-2">
+            <mdb-navbar-brand><a class="navbar-brand" href="#">Top Sellers</a></mdb-navbar-brand>
+        </mdb-navbar>
+        <br>
+        <div class="card-group">
+            <!-- Card -->
+            <mdb-card>
+              <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+                <!-- Card img -->
+                <mdb-card-img src="https://png.pngtree.com/element_pic/00/16/08/2557be6ede8ef03.jpg" alt="Card image cap"></mdb-card-img>
+                <a>
+                  <div class="mask"></div>
+                </a>
+              </div>
+              <!--Card content-->
+              <mdb-card-body>
+                <!--Title-->
+                <mdb-card-title>
+                  <h4>Shoe</h4>
+                </mdb-card-title>
+              </mdb-card-body>
+            </mdb-card>
+            <!-- Card -->
+            <mdb-card>
+              <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+                <!-- Card img -->
+                <mdb-card-img src="http://pngimg.com/uploads/tshirt/tshirt_PNG5428.png" alt="Card image cap"></mdb-card-img>
+                <a>
+                  <div class="mask"></div>
+                </a>
+              </div>
+              <!--Card content-->
+              <mdb-card-body>
+                <!--Title-->
+                <mdb-card-title>
+                  <h4>T-shirt</h4>
+                </mdb-card-title>
+              </mdb-card-body>
+            </mdb-card>
+          
+            <!-- Card -->
+            <mdb-card>
+              <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+                <!-- Card img -->
+                <mdb-card-img src="http://pngimg.com/uploads/women_bag/women_bag_PNG6427.png" alt="Card image cap"></mdb-card-img>
+                <a>
+                  <div class="mask"></div>
+                </a>
+              </div>
+              <!--Card content-->
+              <mdb-card-body>
+                <!--Title-->
+                <mdb-card-title>
+                  <h4>Hand Bag</h4>
+                </mdb-card-title>
+              </mdb-card-body>
+            </mdb-card>
+            <mdb-card>
+                <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+                  <!-- Card img -->
+                  <mdb-card-img src="http://icons.iconarchive.com/icons/designcontest/ecommerce-business/256/smartphone-google-nexus-icon.png" alt="Card image cap"></mdb-card-img>
+                  <a>
+                    <div class="mask"></div>
+                  </a>
+                </div>
+                <!--Card content-->
+                <mdb-card-body>
+                  <!--Title-->
+                  <mdb-card-title>
+                    <h4>Phone</h4>
+                  </mdb-card-title>
+                </mdb-card-body>
+              </mdb-card>
+          </div>
+          
+          <br>
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark info-color-dark lighten-2">
+
+    <!-- Navbar brand -->
+    <mdb-navbar-brand><a class="navbar-brand" routerLink='/home/all'>Categories:</a></mdb-navbar-brand>
+
+    <!-- Collapsible content -->
+    <links>
+
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"  *ngFor="let category of categories">
+            <a class="nav-link waves-light" routerLink='/home/{{category.name}}' mdbWavesEffect>{{category.name}}</a>
+        </li>
+        </ul>
+        <!-- Links -->
+
+<!-- Search form -->
+        <form class="form-inline waves-light" mdbWavesEffect>
+            <div class="md-form mt-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            </div>
+        </form>
+    </links>
+    <!-- Collapsible content -->
+
+</mdb-navbar>
+<br>
+
+      <!-- <div>{{items.name}}</div> -->
+      <!-- <div *ngFor="let item of items">
+          {{ item.name }}
+          {{ item.newPrice }}
+          {{ item.oldPrice }}
+            <div *ngFor="let i of item.advertisments">
+                {{ i.discount }}
+                {{ i.photoUrl }}
+            </div> 
+          </div> -->
+      </div> 
+          <div class="container">
+            <router-outlet></router-outlet>
+          <div class="row">
+              <div class="col-4" *ngFor="let item of items">
+                  <mdb-card>
+                      <div class="discount">
+                          <div class="row">
+                              <div class="col">
+                                  <button type="button" mdbBtn color="info" mdbWavesEffect disabled>
+                                    <h1>
+                                      {{ item.discount }}%</h1></button>
+                              </div>
+                              <div class="col-6">
+                                <br>
+                                <h3 class="font-weight-bold blue-text">
+                                  <strong>Rs {{ item.newPrice }}.00</strong>
+                                </h3>
+                                <h6 class="font-weight-bold red-text">
+                                  <strong><del>Rs {{ item.oldPrice }}.00</del></strong>
+                                </h6>
+                              </div>
+                              <div class="col">
+                              </div>
+                            </div>
+                           </div>
+                      <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+                        <mdb-card-img src="{{ item.photoUrl }}" alt="Card image cap"></mdb-card-img>
+                        <a>
+                          <div class="mask"></div>
+                        </a>
+                      </div>
+                      <mdb-card-body>
+                        <mdb-card-title>
+                          <h4>{{ item.name }}</h4>
+                          <h5>SupplierName</h5>
+                        </mdb-card-title>
+                        <button mdbBtn type="button" gradient="aqua" size="sm" mdbWavesEffect *ngIf="authService.isLoggedIn()"><i class="fa fa-heart-o" aria-hidden="true"></i> wishList</button>
+                        <button mdbBtn type="button" gradient="purple" size="sm" mdbWavesEffect *ngIf="authService.isLoggedIn()"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> buyNow</button>
+                       </mdb-card-body>
+                    </mdb-card>
+            </div>
+          </div>
+          </div>
+          

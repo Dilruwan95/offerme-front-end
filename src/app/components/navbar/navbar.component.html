@@ -1,0 +1,32 @@
+<mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark info-color scrolling-navbar ie-nav" [containerInside]="false" *ngIf="authService.isLoggedIn()">
+    <mdb-navbar-brand>
+        <a class="logo navbar-brand" routerLink="/home"><strong>Navbar</strong></a>
+    </mdb-navbar-brand>
+    <links>
+        <ul class="navbar-nav mr-auto">
+            
+        </ul>
+        <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item">
+                <a class="nav-link waves-effect waves-light" routerLink="/notification">
+                <i class="fa fa-bell-o" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link waves-effect waves-light" routerLink="/orders">
+                <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                </a>
+              </li>
+                <li class="nav-item dropdown" dropdown>
+                        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                        Hi {{currentUser['name']}}<i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="caret"></span></a>
+                        <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                            <a routerLink="/orders" class="dropdown-item waves-light" mdbWavesEffect href="#" (click)="dropdown.hide()">Order Items</a>
+                            <a routerLink="/edit" class="dropdown-item waves-light" mdbWavesEffect href="#" (click)="dropdown.hide()">Settings</a>
+                            <div class="divider dropdown-divider"></div>
+                            <a class="dropdown-item waves-light" mdbWavesEffect (click)="logout()">LogOut</a>
+                        </div>
+                    </li>
+        </ul>
+    </links>
+    </mdb-navbar>
