@@ -1,4 +1,4 @@
-import { WishListService } from './../../service/wish-list.service';
+//import { WishListService } from './../../service/wish-list.service';
 import { ItemService } from './../../services/item.service';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/internal/Subscription';
@@ -22,7 +22,7 @@ export class WishListComponent implements OnInit {
     private route: ActivatedRoute,
     private authService: AuthService,
     private router: Router,
-    private wishListService:WishListService
+   // private wishListService:WishListService
   ) { }
 
   ngOnInit() {

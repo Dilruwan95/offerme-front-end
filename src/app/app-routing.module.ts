@@ -13,6 +13,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { ItemComponent } from './components/item/item.component';
 
+import {CreateAdvertisementComponent} from './components/create-advertisement/create-advertisement.component';
 
 
 const routes: Routes = [
@@ -29,7 +30,12 @@ const routes: Routes = [
       { path: 'notification', component:NotificationComponent},
       { path: 'wishList', component:WishListComponent},
       { path: 'orders', component:OrdersComponent},
-      { path: 'help', component:OfferMeDetailsComponent}
+      { path: 'help', component:OfferMeDetailsComponent},
+
+    
+      { path:'create-advertisement',component:CreateAdvertisementComponent},
+      { path:'siguup',component:SignUpComponent}
+    
     
 
 ];

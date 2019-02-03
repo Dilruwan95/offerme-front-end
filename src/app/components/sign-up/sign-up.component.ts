@@ -1,6 +1,7 @@
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
+
 
 
 @Component({
@@ -11,50 +12,38 @@ import { NgForm } from '@angular/forms';
 })
 export class SignUpComponent implements OnInit {
 
-  showSucessMessage: boolean;
-  serverErrorMessages: string;
-  emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
- 
+  form= new FormGroup({
+     YourName:new FormControl('',[Validators.required,Validators.pattern('^[a-zA-Z ]*$')]),
+     Username:new FormControl('',Validators.required),
+     email:new FormControl('',[Validators.required,Validators.email]),
+     password:new FormControl('',[Validators.required,Validators.minLength(6)]), 
+     Contact:new FormControl('',[Validators.required,Validators.pattern("^[0-9]*$"),Validators.minLength(10),Validators.maxLength(10)]), 
+     address:new FormControl('',Validators.required), 
+     role:new FormControl('')
+
+  })
+
   constructor(
-    private authService:AuthService) { }
-
-  onSubmit(form: NgForm) {
-    this.authService.register(form.value).subscribe(
-      res => {
-        console.log(res);
-        this.showSucessMessage = true;
-        setTimeout(() => this.showSucessMessage = false, 4000);
-        this.resetForm(form);
-      },
-      err => {
-        console.log(err);
-        if (err.status === 422) {
-          this.serverErrorMessages = err.error.join('<br/>');
-        }
-        else
-          this.serverErrorMessages = 'your email or user name already used';
-      }
-    );
+    private auth: AuthService
+  ) { 
+  
   }
-
-  resetForm(form: NgForm) {
-    this.authService.user = {
-      id: 0,
-      name:'',
-      username:'',
-      address:'',
-      telephone:'',
-      email:'',
-      password:''
-    };
-    form.resetForm();
-    this.serverErrorMessages = '';
-  }
+  
 
   ngOnInit() {
     
 
   }
 
+  logIn(credentials){
+    
+       
+      this.auth.register(credentials)
+    
+  }
 
+  
+  
+
+ 
 }

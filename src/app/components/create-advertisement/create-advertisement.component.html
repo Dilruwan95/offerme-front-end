@@ -1,35 +1,94 @@
+<br><br>
+
+<br><br>
+
 <!-- Default form contact -->
-<form [formGroup]=class="text-center border border-light p-5">
+<form [formGroup]="CreateAdvertisement" class ="text-center border border-light p-5" #f="ngForm" (ngSubmit)="logIn(CreateAdvertisement.value)">
 
   <p class="h4 mb-4">Advertisement</p>
 
+  <div class="row">
   <!-- Subject -->
+  <!-- <select class="browser-default custom-select mb-4">
+    <option value= 1 disabled  >Choose your category</option>
+    <option value= 2 formControlName="role" >Clothing</option>
+    <option value= 3 formControlName="role">Food</option>
+    <option value= 4 formControlName="role">Finance</option>
+    <option value= 5 formControlName="role">Services</option>
+    <option value= 6 formControlName="role">Other</option>
+  </select> -->
+  
   <select class="browser-default custom-select mb-4">
-    <option value="1" disabled >Choose your category</option>
-    <option value="2" >Clothing</option>
-    <option value="3">Food</option>
-    <option value="4">Finance</option>
-    <option value="5">Service provider</option>
-    <option value="6" >Other</option>
+    <label for="category">Choose your category</label>
+    <select class="form-control" >
+      <option *ngFor="let cat of categories" >
+        {{ cat}}
+      </option>
+    </select>
   </select>
+  <!-- <div *ngIf="CreateAdvertisement.get('category').touched " >
+    category Required!
+  </div> -->
+
 
   <!-- Name -->
-  <input type="number" formControlName="NewPrice" id="" class="form-control mb-4" placeholder="New Price">
-
-
-  <input type="number" formControlName="OldPrice"id="" class="form-control mb-4" placeholder="Old Price">
-
-
-  <input type="number" formControlName="Discount" id="" class="form-control mb-4" placeholder="Discount">
+  <input type="number" 
+        formControlName="NewPrice"  
+        id="" class="form-control mb-4" 
+        placeholder="New Price" 
+        [ngClass]="{'is-invalid': CreateAdvertisement.get('NewPrice').touched && CreateAdvertisement.get('NewPrice').invalid}"
+        >
+        <div *ngIf="CreateAdvertisement.get('NewPrice').touched && CreateAdvertisement.get('NewPrice').invalid" class="invalid-feedback">
+          <div *ngIf="CreateAdvertisement.get('NewPrice').errors.required">New price is required</div>
+          <div *ngIf="CreateAdvertisement.get('NewPrice').errors.pattern "> </div>
+      
+       </div>
   
-  Start Date: <input type="date" formControlName="StartDate" id="" class="form-control mb-4" placeholder="Start Date">
+   
+  <input type="number" 
+    formControlName="OldPrice"  
+    id="" class="form-control mb-4" 
+    placeholder="Old Price"
+    [ngClass]="{'is-invalid': CreateAdvertisement.get('OldPrice').touched && CreateAdvertisement.get('OldPrice').invalid}"
+    >
+    <div *ngIf="CreateAdvertisement.get('OldPrice').touched && CreateAdvertisement.get('OldPrice').invalid" class="invalid-feedback">
+       <!-- <div *ngIf="CreateAdvertisement.get('OldPrice').errors.required">Old price is required</div> -->
+        <div *ngIf="CreateAdvertisement.get('OldPrice').errors.pattern "> </div>
+    
+     </div>
+   
+  
+   <input type="number" 
+         formControlName="Discount"  
+         id="" class="form-control mb-4"
+         placeholder="Discount"
+         [ngClass]="{'is-invalid': CreateAdvertisement.get('Discount').touched && CreateAdvertisement.get('Discount').invalid}"
+         >
+    <div *ngIf="CreateAdvertisement.get('Discount').touched && CreateAdvertisement.get('Discount').invalid" class="invalid-feedback">
+        <!-- <div *ngIf="CreateAdvertisement.get('OldPrice').errors.required">Old price is required</div> -->
+          <div *ngIf="CreateAdvertisement.get('Discount').errors.pattern "> </div>
+         
+      </div>     
+   
 
 
+  Start Date: 
+  <input type="date" formControlName="StartDate"  id="" class="form-control mb-4" placeholder="Start Date">
+  <div *ngIf="CreateAdvertisement.get('NewPrice').touched " >
+    <!-- Start Date Required!-->
+  </div>
+
+  
   End Date:<input type="date" formControlName="EndDate" id="" class="form-control mb-4" placeholder="End Date">
+  <div *ngIf="CreateAdvertisement.get('NewPrice').touched " >
+   <!-- End Date Required!-->
+  </div>
 
-  <input type="file" id="" class="form-control mb-4" placeholder="" (change)="upload($event)" accept=".png,.jpg"   >
-
-  
+  <div class="upload">
+  <input type="file" id="" class="form-control mb-4" placeholder="" (change)="upload($event)"  accept=".png,.jpg"   >
+  </div>
+</div>
+   
   <button class="btn btn-info btn-block" type="submit" >Submit</button>
 
 </form>

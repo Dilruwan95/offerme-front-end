@@ -32,6 +32,9 @@ import { OrderService } from './services/order.service';
 import { CategoryComponent } from './components/category/category.component';
 import { CreateAdvertisementComponent } from './components/create-advertisement/create-advertisement.component';
 
+//firebase
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 
 @NgModule({
   declarations: [
@@ -76,7 +79,19 @@ import { CreateAdvertisementComponent } from './components/create-advertisement/
     CarouselModule.forRoot(),
     DropdownModule.forRoot(),
     CardsFreeModule,
-    AppRoutingModule
+    AppRoutingModule,
+  
+
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyCw7VRO_D_pVH79h2pgwPR9pEJMHJyPNic",
+      authDomain: "offerme-advertisement.firebaseapp.com",
+      databaseURL: "https://offerme-advertisement.firebaseio.com",
+      projectId: "offerme-advertisement",
+      storageBucket: "offerme-advertisement.appspot.com",
+      messagingSenderId: "641476519317"
+         }),
+       AngularFireStorageModule
+  
   ],
   providers: [AuthService, ItemService, OrderService, WishListService],
   bootstrap: [AppComponent]
