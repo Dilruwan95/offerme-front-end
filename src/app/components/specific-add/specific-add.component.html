@@ -1,33 +1,14 @@
 <br><br>
 
-<br><br>
-
 <!-- Default form contact -->
 <form [formGroup]="CreateAdvertisement" class ="text-center border border-light p-5" #f="ngForm" (ngSubmit)="logIn(CreateAdvertisement.value)">
 
-  <p class="h4 mb-4">Advertisement</p>
+  <p class="h4 mb-4">Special Advertisement</p>
 
   <div class="row">
-  <!-- Subject -->
-  <!-- <select class="browser-default custom-select mb-4">
-    <option value= 1 disabled  >Choose your category</option>
-    <option value= 2 formControlName="role" >Clothing</option>
-    <option value= 3 formControlName="role">Food</option>
-    <option value= 4 formControlName="role">Finance</option>
-    <option value= 5 formControlName="role">Services</option>
-    <option value= 6 formControlName="role">Other</option>
-  </select> -->
-
-  <!-- <select [(ngModel)]="selectedCity" (ngModelChange)="onChange($event)" >
-    <option *ngFor="let c of cities" [ngValue]="c"> {{c.name}} </option>
-  </select> -->
-
-
-  
-  
   <div class="form-check form-check-inline">
     <input type="radio" 
-    class="for m-check-input"
+    class="form-check-input"
     value=1
     formControlName="role"
     >
@@ -71,6 +52,15 @@
     >
     <label class="form-check-label" for="materialInline1">Other</label>
   </div>
+  
+   <select class="browser-default custom-select mb-4" >
+    <option value= 1 disabled  >Choose your place</option>
+    <option value= 2 formControlName="roll" >Clothing</option>
+    <option value= 3 formControlName="roll">Food</option>
+    <option value= 4 formControlName="roll">Finance</option>
+    <option value= 5 formControlName="roll">Services</option>
+    <option value= 6 formControlName="roll">Other</option>
+  </select> 
   
   
 
@@ -130,6 +120,8 @@
   <div class="upload">
   <input type="file" id="" class="form-control mb-4" placeholder="" (change)="upload($event)"  accept=".png,.jpg"   >
   </div>
+
+  
 </div>
    
   <button class="btn btn-info btn-block" type="submit" >Submit</button>

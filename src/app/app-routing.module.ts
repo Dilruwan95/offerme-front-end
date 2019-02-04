@@ -14,7 +14,7 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { ItemComponent } from './components/item/item.component';
 
 import {CreateAdvertisementComponent} from './components/create-advertisement/create-advertisement.component';
-
+import { SpecificAddComponent } from './components/specific-add/specific-add.component';
 
 const routes: Routes = [
     
@@ -34,7 +34,9 @@ const routes: Routes = [
 
     
       { path:'create-advertisement',component:CreateAdvertisementComponent},
-      { path:'siguup',component:SignUpComponent}
+      { path:'siguup',component:SignUpComponent},
+      {path :'specific-add',component:SpecificAddComponent}
+      
     
     
 
@@ -42,6 +44,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+exports: [RouterModule]
 })
 export class AppRoutingModule { }

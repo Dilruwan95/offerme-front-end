@@ -35,6 +35,7 @@ import { CreateAdvertisementComponent } from './components/create-advertisement/
 //firebase
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireStorageModule } from 'angularfire2/storage';
+import { SpecificAddComponent } from './components/specific-add/specific-add.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
     AllItemsComponent,
     ItemComponent,
     CategoryComponent,
-    CreateAdvertisementComponent
+    CreateAdvertisementComponent,
+    SpecificAddComponent
   ],
   imports: [
     ButtonsModule,

@@ -1,6 +1,6 @@
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
+import { NgForm, FormGroup, FormControl, Validators,FormBuilder } from '@angular/forms';
 
 
 
@@ -24,7 +24,8 @@ export class SignUpComponent implements OnInit {
   })
 
   constructor(
-    private auth: AuthService
+    private auth: AuthService,
+    private fb: FormBuilder
   ) { 
   
   }
@@ -42,7 +43,8 @@ export class SignUpComponent implements OnInit {
     
   }
 
-  
+  countries = [{'id':1, 'name':'India'}, {'id':2, 'name': 'USA'}, {'id':3, 'name': 'UK'}];
+
   
 
  

@@ -25,4 +25,7 @@ export class ItemService {
     return this.http.get(`http://localhost:8080/api/item/advertisment/${id}`)
   }
 
+  
+
+
 }
